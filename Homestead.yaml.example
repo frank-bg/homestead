@@ -1,5 +1,4 @@
 ---
-version: 9.1.0
 ip: "192.168.10.10"
 memory: 2048
 cpus: 2
@@ -18,11 +17,11 @@ sites:
     - map: homestead.test
       to: /home/vagrant/code/public
 
-# databases:
-#     - homestead
+databases:
+    - homestead
 
 features:
-    - mariadb: true
+    - mariadb: false
     - ohmyzsh: false
     - webdriver: false
 
