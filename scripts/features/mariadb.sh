@@ -51,6 +51,7 @@ cat > /etc/mysql/conf.d/mysql.cnf << EOF
 [mysqld]
 bind-address = 0.0.0.0
 ignore-db-dir = lost+found
+sql-mode=""
 EOF
 
 export MYSQL_PWD=secret
