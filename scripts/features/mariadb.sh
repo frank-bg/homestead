@@ -25,7 +25,7 @@ apt-get remove -y --purge mysql-server mysql-client mysql-common
 apt-get autoremove -y
 apt-get autoclean
 
-rm -rf /var/lib/mysql
+rm -rf /homestead-vg/master/*
 rm -rf /var/log/mysql
 rm -rf /etc/mysql
 
@@ -53,6 +53,7 @@ cat > /etc/mysql/conf.d/mysql.cnf << EOF
 bind-address = 0.0.0.0
 ignore-db-dir = lost+found
 sql-mode=""
+skip-log-bin
 EOF
 
 export MYSQL_PWD=secret
