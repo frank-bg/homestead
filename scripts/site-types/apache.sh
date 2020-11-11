@@ -21,8 +21,14 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 sudo service nginx stop
-apt-get update
-apt-get install -y apache2 php"$5"-cgi libapache2-mod-fcgid
+if [ ! -f /home/vagrant/.homestead-features/apache2-php"$5" ]
+then
+	apt-get update
+	apt-get install -y apache2 php"$5"-cgi libapache2-mod-fcgid
+	touch /home/vagrant/.homestead-features/apache2-php"$5"
+	chown -Rf vagrant:vagrant /home/vagrant/.homestead-features
+fi
+
 sed -i "s/www-data/vagrant/" /etc/apache2/envvars
 
 block="<VirtualHost *:$3>
