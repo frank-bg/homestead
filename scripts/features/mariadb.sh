@@ -54,6 +54,7 @@ bind-address = 0.0.0.0
 ignore-db-dir = lost+found
 sql-mode=""
 skip-log-bin
+character-set-server=utf8mb4
 EOF
 
 export MYSQL_PWD=secret
